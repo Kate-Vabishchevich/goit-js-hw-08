@@ -19,11 +19,11 @@ function onFormSubmit(e) {
         message: message.value
     };
 
-    console.log(formInput,);
+    console.log(formInput);
 
     e.currentTarget.reset();
 
-    localStorage.removeItem(STORAGE_KEY);
+    // localStorage.removeItem(STORAGE_KEY);
 }
 
 function onFormData(e) {
@@ -37,6 +37,7 @@ function fillingTextarea() {
     const savedMessage = localStorage.getItem(STORAGE_KEY);
 
     if (savedMessage) {
-        formData = JSON.parse(savedMessage)
+        formData = JSON.parse(savedMessage);
+
     }
 }
