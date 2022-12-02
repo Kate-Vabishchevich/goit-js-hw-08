@@ -20,17 +20,14 @@ function onFormSubmit(e) {
     };
 
     console.log(formInput);
-
     e.currentTarget.reset();
-
-    // localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(STORAGE_KEY);
 }
 
 function onFormData(e) {
     formData[e.target.name] = e.target.value;
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
-   
 }
 
 function fillingTextarea() {
@@ -38,6 +35,6 @@ function fillingTextarea() {
 
     if (savedMessage) {
         formData = JSON.parse(savedMessage);
-
+        formRef.elements.value = formData.value;
     }
 }
