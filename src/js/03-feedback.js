@@ -1,6 +1,8 @@
 import throttle from 'lodash.throttle';
 
 const formRef = document.querySelector('.feedback-form');
+const email = document.querySelector('.feedback-form input');
+const message = document.querySelector('.feedback-form textarea');
 
 const STORAGE_KEY = "feedback-form-state";
 let formData = {};
@@ -35,6 +37,8 @@ function fillingTextarea() {
 
     if (savedMessage) {
         formData = JSON.parse(savedMessage);
-        formRef.elements.value = formData.value;
+        email.value = formData.email;
+        message.value = formData.message;
+        
     }
 }
